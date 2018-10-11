@@ -1,0 +1,27 @@
+POST http://localhost:8080/Scrabble-ws/api/game
+{"gamename":"osggame","sizex":40,"sizey":20}
+Accept: application/json
+Content-type: application/json
+
+
+GET http://localhost:8080/Scrabble-ws/api/game
+Accept: application/json
+
+
+GET http://localhost:8080/Scrabble-ws/api/game/1
+Accept: text/html
+
+PUT  http://localhost:8080/Scrabble-ws/api/game/1
+Accept: application/json
+Content-type: application/json
+{"gamename":"Orlas56","sizex":40,"sizey":20}
+
+
+POST http://localhost:8080/Scrabble-ws/api/game/1/letter
+Accept: application/json
+Content-type: application/json
+{"letters":[{"letter":"H","positionx":"2","positiony":"11"},{"letter":"O","positionx":"3","positiony":"11"},{"letter":"L","positionx":"4","positiony":"11"},{"letter":"A","positionx":"5","positiony":"11"}]}
+
+
+DELETE http://localhost:8080/Scrabble-ws/api/game/2
+Accept: application/json

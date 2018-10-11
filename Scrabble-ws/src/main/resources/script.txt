@@ -1,0 +1,24 @@
+create database scrabble
+use scrabble
+
+CREATE TABLE game
+( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  sizex INT NOT NULL,
+  sizey INT NOT NULL,
+  gamename VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE letter
+( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idgame INT NOT NULL,
+  letter VARCHAR(1) NOT NULL,
+  positionx INT NOT NULL,
+  positiony INT NOT NULL
+);
+
+ALTER TABLE letter
+ADD CONSTRAINT FK_game
+FOREIGN KEY (idgame) REFERENCES game(id) on delete cascade;
+
+CREATE INDEX idx_letter
+ON letter (idgame);
